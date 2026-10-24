@@ -1,0 +1,39 @@
+# To install the mysql-server. run these commands in ubuntu terminal
+sudo apt update
+sudo apt install mysql-server
+
+
+sudo systemctl status mysql
+
+
+# if running , run the following command in the terminal
+mysql -u root -p
+(then write the password -> "Enter")
+
+
+# Run the following mysql queries in the mysql terminal
+
+# To create a database
+CREATE DATABASE db_name
+
+# To create a user
+CREATE USER 'user_name'@'localhost' IDENTIFIED BY 'set_a_password_here';
+
+# Note : Password should contain multiple uppercase,lowercase ,numeric and special charecters.
+
+
+# To grant privilleges to the user
+
+GRANT ALL PRIVILEGES ON db_name.* TO 'user_name'@'localhost';
+
+EXIT;
+
+
+# now we are set to connect this database to the python code.
+
+
+# Now install the PyMySQL for using in python code
+
+python3 -m pip install PyMySQL
+
+# Now see the code 'Python/mysql_test.py' to know how the connections can be established and how we can pass queries and accept responces from the mysql from python.
